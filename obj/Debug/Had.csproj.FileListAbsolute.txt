@@ -1,0 +1,10 @@
+C:\Users\david\source\repos\Had\Had\bin\Debug\Had.exe.config
+C:\Users\david\source\repos\Had\Had\bin\Debug\Had.exe
+C:\Users\david\source\repos\Had\Had\bin\Debug\Had.pdb
+C:\Users\david\source\repos\Had\Had\obj\Debug\Had.csprojAssemblyReference.cache
+C:\Users\david\source\repos\Had\Had\obj\Debug\Had.Form1.resources
+C:\Users\david\source\repos\Had\Had\obj\Debug\Had.Properties.Resources.resources
+C:\Users\david\source\repos\Had\Had\obj\Debug\Had.csproj.GenerateResource.cache
+C:\Users\david\source\repos\Had\Had\obj\Debug\Had.csproj.CoreCompileInputs.cache
+C:\Users\david\source\repos\Had\Had\obj\Debug\Had.exe
+C:\Users\david\source\repos\Had\Had\obj\Debug\Had.pdb

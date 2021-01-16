@@ -28,20 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.canvas = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.canvas)).BeginInit();
             this.SuspendLayout();
+            // 
+            // canvas
+            // 
+            this.canvas.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.canvas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.canvas.Location = new System.Drawing.Point(13, 4);
+            this.canvas.Name = "canvas";
+            this.canvas.Size = new System.Drawing.Size(1012, 601);
+            this.canvas.TabIndex = 0;
+            this.canvas.TabStop = false;
+            this.canvas.Paint += new System.Windows.Forms.PaintEventHandler(this.canvas_Paint);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(897, 607);
+            this.ClientSize = new System.Drawing.Size(1037, 617);
+            this.Controls.Add(this.canvas);
             this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.canvas)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.PictureBox canvas;
     }
 }
 
