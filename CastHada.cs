@@ -25,6 +25,8 @@ namespace Had
         public CastHada(int x, int y)
         {
             pozice = new Point(x, y);
+            smer = Smer.Doprava;
+            smerKeZmene = smer;
         }
 
         public virtual void VykresliSe(Graphics g)

@@ -36,7 +36,12 @@ namespace Had
             {
                 c.PohniSe();
             }
+            for (int i = castiTela.Count - 1; i > 0; i--)
+            {
+                castiTela[i].ZmenSmer(castiTela[i - 1]);
+            }
 
+            castiTela[0].ZmenSmer(hlava);
         }
 
         public void ZmenSmer(Smer novySmer)
