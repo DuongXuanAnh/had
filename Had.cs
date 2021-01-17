@@ -16,6 +16,9 @@ namespace Had
         private List<CastHada> castiTela;
         private int sirkaPole;
         private int vyskaPole;
+
+        CastHada novaCast = null;
+
         public Had(int x, int y, int sirkaPole, int vyskaPole)
         {
             this.sirkaPole = sirkaPole;
@@ -59,6 +62,14 @@ namespace Had
 
             castiTela[0].ZmenSmer(hlava);
 
+            if (novaCast != null)
+            {
+                novaCast.ZmenSmer(castiTela.Last());
+                castiTela.Add(novaCast);
+
+                novaCast = null;
+            }
+
             if (hlava.Pozice == jidlo.Pozice)
             {
                 Jez();
@@ -70,6 +81,13 @@ namespace Had
             if (HadSnedlJidlo != null)
                 HadSnedlJidlo();
 
+            ZvetsiSe();
+        }
+
+        public void ZvetsiSe()
+        {
+            novaCast = new CastHada(castiTela.Last().Pozice.X, castiTela.Last().Pozice.Y);
+            novaCast.ZmenSmer(castiTela.Last());
         }
 
         public void ZmenSmer(Smer novySmer)
