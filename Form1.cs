@@ -26,6 +26,11 @@ namespace Had
  
         }
 
+        private void OnHadSnedlJidlo()
+        {
+            PremistiJidlo();
+        }
+
         private void canvas_Paint(object sender, PaintEventArgs e)
         {
             had.VykresliSe(e.Graphics);
@@ -34,7 +39,7 @@ namespace Had
 
         private void herniTimer_Tick(object sender, EventArgs e)
         {
-            had.PosunSe();
+            had.PosunSe(jidlo);
             canvas.Refresh();
         }
 
@@ -58,6 +63,9 @@ namespace Had
             int y = (canvas.Height / 20) / 2;
             had = new Had(x, y, canvas.Width / 20, canvas.Height / 20);
             PremistiJidlo();
+
+            had.HadSnedlJidlo += OnHadSnedlJidlo;
+
             herniTimer.Start();
             canvas.Refresh();
         }

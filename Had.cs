@@ -9,6 +9,9 @@ namespace Had
 {
     class Had : IDrawable
     {
+
+        public event Action HadSnedlJidlo;
+
         private Hlava hlava;
         private List<CastHada> castiTela;
         private int sirkaPole;
@@ -42,7 +45,7 @@ namespace Had
 
         }
 
-        public void PosunSe()
+        public void PosunSe(Jidlo jidlo)
         {
             hlava.PohniSe();
             foreach (CastHada c in castiTela)
@@ -55,6 +58,18 @@ namespace Had
             }
 
             castiTela[0].ZmenSmer(hlava);
+
+            if (hlava.Pozice == jidlo.Pozice)
+            {
+                Jez();
+            }
+        }
+
+        private void Jez()
+        {
+            if (HadSnedlJidlo != null)
+                HadSnedlJidlo();
+
         }
 
         public void ZmenSmer(Smer novySmer)
