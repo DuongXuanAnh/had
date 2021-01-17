@@ -16,6 +16,7 @@ namespace Had
         private List<CastHada> castiTela;
         private int sirkaPole;
         private int vyskaPole;
+        public int skore;
 
         CastHada novaCast = null;
 

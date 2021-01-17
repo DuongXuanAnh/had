@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.canvas = new System.Windows.Forms.PictureBox();
             this.herniTimer = new System.Windows.Forms.Timer(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.lb_skore = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.canvas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -38,7 +40,7 @@
             // 
             this.canvas.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.canvas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.canvas.Location = new System.Drawing.Point(13, 4);
+            this.canvas.Location = new System.Drawing.Point(12, 63);
             this.canvas.Name = "canvas";
             this.canvas.Size = new System.Drawing.Size(1012, 601);
             this.canvas.TabIndex = 0;
@@ -49,17 +51,40 @@
             // 
             this.herniTimer.Tick += new System.EventHandler(this.herniTimer_Tick);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(83, 29);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Skóre:";
+            // 
+            // lb_skore
+            // 
+            this.lb_skore.AutoSize = true;
+            this.lb_skore.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_skore.Location = new System.Drawing.Point(112, 16);
+            this.lb_skore.Name = "lb_skore";
+            this.lb_skore.Size = new System.Drawing.Size(31, 32);
+            this.lb_skore.TabIndex = 2;
+            this.lb_skore.Text = "0";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1065, 676);
+            this.ClientSize = new System.Drawing.Size(1036, 676);
+            this.Controls.Add(this.lb_skore);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.canvas);
             this.Name = "Form1";
             this.Text = "Form1";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.canvas)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -67,6 +92,8 @@
 
         private System.Windows.Forms.PictureBox canvas;
         private System.Windows.Forms.Timer herniTimer;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lb_skore;
     }
 }
 

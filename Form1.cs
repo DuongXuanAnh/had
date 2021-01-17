@@ -29,6 +29,8 @@ namespace Had
         private void OnHadSnedlJidlo()
         {
             PremistiJidlo();
+            had.skore++;
+            lb_skore.Text = "" + had.skore;
         }
 
         private void canvas_Paint(object sender, PaintEventArgs e)
