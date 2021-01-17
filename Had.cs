@@ -11,7 +11,6 @@ namespace Had
     {
         private Hlava hlava;
         private List<CastHada> castiTela;
-        private int rychlost;
         private int sirkaPole;
         private int vyskaPole;
         public Had(int x, int y, int sirkaPole, int vyskaPole)
@@ -27,6 +26,20 @@ namespace Had
             }
 
             castiTela[0].ZmenSmer(hlava);
+        }
+
+        public bool JsiNaTetoPozici(int x, int y)
+        {
+            foreach (CastHada c in castiTela)
+            {
+                if (c.Pozice.X == x && c.Pozice.Y == y)
+                    return true;
+            }
+            if (hlava.Pozice.X == x && hlava.Pozice.Y == y)
+                return true;
+
+            return false;
+
         }
 
         public void PosunSe()

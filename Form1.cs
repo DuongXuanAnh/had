@@ -14,6 +14,8 @@ namespace Had
     public partial class Form1 : Form
     {
         Had had;
+        Jidlo jidlo;
+        Random random = new Random(); // Pro premistovani jidla
 
         public Form1()
         {
@@ -21,11 +23,13 @@ namespace Had
             int x = (canvas.Width / 20) / 2;
             int y = (canvas.Height / 20) / 2;
             had = new Had(x, y, canvas.Width / 20, canvas.Height / 20);
+ 
         }
 
         private void canvas_Paint(object sender, PaintEventArgs e)
         {
             had.VykresliSe(e.Graphics);
+            jidlo?.VykresliSe(e.Graphics);
         }
 
         private void herniTimer_Tick(object sender, EventArgs e)
@@ -33,11 +37,27 @@ namespace Had
             had.PosunSe();
             canvas.Refresh();
         }
+
+        private void PremistiJidlo()
+        {
+            int x = random.Next(0, canvas.Width / 20);
+            int y = random.Next(0, canvas.Height / 20);
+            if (had.JsiNaTetoPozici(x, y))
+            {
+                PremistiJidlo();
+            }
+            else
+            {
+                jidlo = new Jidlo(x, y);
+            }
+        }
+
         private void StartGame()
         {
             int x = (canvas.Width / 20) / 2;
             int y = (canvas.Height / 20) / 2;
-            had = new Had(x, y, canvas.Width / 20, canvas.Height / 20); 
+            had = new Had(x, y, canvas.Width / 20, canvas.Height / 20);
+            PremistiJidlo();
             herniTimer.Start();
             canvas.Refresh();
         }
