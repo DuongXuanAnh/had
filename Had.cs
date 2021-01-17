@@ -11,6 +11,7 @@ namespace Had
     {
         private Hlava hlava;
         private List<CastHada> castiTela;
+        private int rychlost;
         private int sirkaPole;
         private int vyskaPole;
         public Had(int x, int y, int sirkaPole, int vyskaPole)
@@ -25,8 +26,24 @@ namespace Had
                 castiTela.Add(new CastHada(x - (i + 1), y));
             }
 
-           
+            castiTela[0].ZmenSmer(hlava);
         }
+
+        public void PosunSe()
+        {
+            hlava.PohniSe();
+            foreach (CastHada c in castiTela)
+            {
+                c.PohniSe();
+            }
+
+        }
+
+        public void ZmenSmer(Smer novySmer)
+        {
+            hlava.ZmenSmer(novySmer);
+        }
+
         public void VykresliSe(Graphics g)
         {
             hlava.VykresliSe(g);
@@ -35,5 +52,14 @@ namespace Had
                 c.VykresliSe(g);
             }
         }
+
+      
+    }
+    public enum Smer
+    {
+        Nahoru,
+        Doprava,
+        Dolu,
+        Doleva
     }
 }

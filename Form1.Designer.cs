@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.canvas = new System.Windows.Forms.PictureBox();
+            this.herniTimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.canvas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,14 +45,19 @@
             this.canvas.TabStop = false;
             this.canvas.Paint += new System.Windows.Forms.PaintEventHandler(this.canvas_Paint);
             // 
+            // herniTimer
+            // 
+            this.herniTimer.Tick += new System.EventHandler(this.herniTimer_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1037, 617);
+            this.ClientSize = new System.Drawing.Size(1065, 676);
             this.Controls.Add(this.canvas);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.canvas)).EndInit();
             this.ResumeLayout(false);
 
@@ -59,6 +66,7 @@
         #endregion
 
         private System.Windows.Forms.PictureBox canvas;
+        private System.Windows.Forms.Timer herniTimer;
     }
 }
 
