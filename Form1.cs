@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace Had
 {
+    //C:\Users\david\source\repos\Had\Had
     public partial class Form1 : Form
     {
         Had had;

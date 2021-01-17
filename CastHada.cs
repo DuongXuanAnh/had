@@ -41,14 +41,32 @@ namespace Had
 
         public void ZmenSmer(Smer novySmer)
         {
+            if (!JeSmerOpacny(novySmer))
+            {
                 smerKeZmene = novySmer;
+            }
         }
 
         public void ZmenSmer(CastHada cast)
         {
-
             smerKeZmene = cast.smer;
+        }
 
+        private bool JeSmerOpacny(Smer novySmer)
+        {
+            if (smer == Smer.Nahoru || smer == Smer.Dolu)
+            {
+                if (novySmer == Smer.Nahoru || novySmer == Smer.Dolu)
+                    return true;
+            }
+
+            if (smer == Smer.Doleva || smer == Smer.Doprava)
+            {
+                if (novySmer == Smer.Doleva || novySmer == Smer.Doprava)
+                    return true;
+            }
+
+            return false;
         }
 
         public void PohniSe()
