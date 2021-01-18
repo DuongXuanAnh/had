@@ -97,7 +97,6 @@ namespace Had
 
         private void Jez()
         {
-            if (HadSnedlJidlo != null)
                 HadSnedlJidlo();
 
             ZvetsiSe();
@@ -122,8 +121,6 @@ namespace Had
                 c.VykresliSe(g);
             }
         }
-
-      
     }
     public enum Smer
     {

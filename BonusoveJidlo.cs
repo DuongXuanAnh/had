@@ -9,6 +9,7 @@ namespace Had
 {
     class BonusoveJidlo : Jidlo
     {
+        
         public BonusoveJidlo(int x, int y) : base(x, y)
         {
         }

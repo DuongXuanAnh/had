@@ -33,6 +33,8 @@
             this.herniTimer = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.lb_skore = new System.Windows.Forms.Label();
+            this.bonusovyTimer = new System.Windows.Forms.Timer(this.components);
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.canvas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,11 +73,24 @@
             this.lb_skore.TabIndex = 2;
             this.lb_skore.Text = "0";
             // 
+            // bonusovyTimer
+            // 
+            this.bonusovyTimer.Tick += new System.EventHandler(this.bonusovyTimer_Tick);
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(473, 12);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(551, 41);
+            this.progressBar1.TabIndex = 3;
+            this.progressBar1.Value = 100;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1036, 676);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.lb_skore);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.canvas);
@@ -94,6 +109,8 @@
         private System.Windows.Forms.Timer herniTimer;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lb_skore;
+        private System.Windows.Forms.Timer bonusovyTimer;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }
 

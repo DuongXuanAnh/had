@@ -9,9 +9,9 @@ namespace Had
 {
     class Jidlo : IDrawable
     {
-        private int velikost = 20;
+        protected int velikost = 20;
         private Brush barva;
-        private Point pozice;
+        protected Point pozice;
 
         public Point Pozice
         {
@@ -24,7 +24,7 @@ namespace Had
             barva = new SolidBrush(Color.GreenYellow);
         }
 
-        public void VykresliSe(Graphics g)
+        public virtual void VykresliSe(Graphics g)
         {
             g.FillRectangle(barva, pozice.X * velikost, pozice.Y * velikost, velikost, velikost);
         }
