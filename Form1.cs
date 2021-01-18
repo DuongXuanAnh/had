@@ -58,7 +58,22 @@ namespace Had
                 jidlo = new Jidlo(x, y);
             }
         }
-
+        private void OnHadUmrel()
+        {
+            herniTimer.Stop();
+            DialogResult dr = MessageBox.Show(
+                "Had umřel! Chcete spustit novou hru?",
+                "Konec hry!", MessageBoxButtons.YesNo);
+            if (dr == DialogResult.No)
+            {
+                this.Close();
+                // Návrat do menu se vykona v From1_Closed
+            }
+            if (dr == DialogResult.Yes)
+            {
+                StartGame();
+            }
+        }
         private void StartGame()
         {
             int x = (canvas.Width / 20) / 2;
@@ -67,6 +82,7 @@ namespace Had
             PremistiJidlo();
 
             had.HadSnedlJidlo += OnHadSnedlJidlo;
+            had.HadUmrel += OnHadUmrel;
 
             herniTimer.Start();
             canvas.Refresh();

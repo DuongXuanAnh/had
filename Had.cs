@@ -9,7 +9,7 @@ namespace Had
 {
     class Had : IDrawable
     {
-
+        public event Action HadUmrel;
         public event Action HadSnedlJidlo;
 
         private Hlava hlava;
@@ -75,6 +75,24 @@ namespace Had
             {
                 Jez();
             }
+
+            foreach (CastHada cast in castiTela)
+            {
+                if (cast.Pozice == hlava.Pozice)
+                {
+                    Umri();
+                }
+            }
+
+            if (hlava.Pozice.X < 0 || hlava.Pozice.X > sirkaPole - 1)
+                Umri();
+            if (hlava.Pozice.Y < 0 || hlava.Pozice.Y > vyskaPole - 1)
+                Umri();
+        }
+
+        public void Umri()
+        {
+                HadUmrel();
         }
 
         private void Jez()
