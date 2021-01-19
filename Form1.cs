@@ -25,14 +25,14 @@ namespace Had
             int x = (canvas.Width / 20) / 2;
             int y = (canvas.Height / 20) / 2;
             had = new Had(x, y, canvas.Width / 20, canvas.Height / 20);
- 
+
         }
 
         private void OnHadSnedlJidlo()
         {
+            count++;
             PremistiJidlo();
-            Console.WriteLine(count);
-            had.skore += (count % 5 == 0) ? progressBar1.Value : 1;
+            had.skore += (count%5==0) ? progressBar1.Value : 1;
             lb_skore.Text = "" + had.skore;
         }
 
@@ -64,7 +64,7 @@ namespace Had
                     jidlo = new BonusoveJidlo(x, y);
                     progressBar1.Value = 100;
                     bonusovyTimer.Start();
-                    count = 0;
+                    count = -1;
                 }
                 else
                 {
@@ -72,14 +72,15 @@ namespace Had
                     progressBar1.Visible = false;
                     jidlo = new Jidlo(x, y);
                 }
-                count++;
+                    
             }
         }
         private void OnHadUmrel()
         {
             herniTimer.Stop();
             DialogResult dr = MessageBox.Show(
-                "Had umřel! Chcete spustit novou hru?",
+                "Skóre: " + had.skore + 
+                "\nHad umřel! Chcete spustit novou hru?",
                 "Konec hry!", MessageBoxButtons.YesNo);
             if (dr == DialogResult.No)
             {
@@ -97,7 +98,8 @@ namespace Had
             int y = (canvas.Height / 20) / 2;
             had = new Had(x, y, canvas.Width / 20, canvas.Height / 20);
             PremistiJidlo();
-
+            lb_skore.Text = "0";
+            count = 0;
             had.HadSnedlJidlo += OnHadSnedlJidlo;
             had.HadUmrel += OnHadUmrel;
 

@@ -35,6 +35,7 @@
             this.lb_skore = new System.Windows.Forms.Label();
             this.bonusovyTimer = new System.Windows.Forms.Timer(this.components);
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.canvas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,9 +80,11 @@
             // 
             // progressBar1
             // 
+            this.progressBar1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.progressBar1.Location = new System.Drawing.Point(473, 12);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(551, 41);
+            this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.progressBar1.TabIndex = 3;
             this.progressBar1.Value = 100;
             // 
@@ -111,6 +114,7 @@
         private System.Windows.Forms.Label lb_skore;
         private System.Windows.Forms.Timer bonusovyTimer;
         private System.Windows.Forms.ProgressBar progressBar1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
 
