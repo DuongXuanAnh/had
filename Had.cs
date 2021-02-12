@@ -106,6 +106,7 @@ namespace Had
         {
             novaCast = new CastHada(castiTela.Last().Pozice.X, castiTela.Last().Pozice.Y);
             novaCast.ZmenSmer(castiTela.Last());
+        
         }
 
         public void ZmenSmer(Smer novySmer)

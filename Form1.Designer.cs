@@ -35,7 +35,6 @@
             this.lb_skore = new System.Windows.Forms.Label();
             this.bonusovyTimer = new System.Windows.Forms.Timer(this.components);
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.canvas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,13 +44,14 @@
             this.canvas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.canvas.Location = new System.Drawing.Point(12, 63);
             this.canvas.Name = "canvas";
-            this.canvas.Size = new System.Drawing.Size(1012, 601);
+            this.canvas.Size = new System.Drawing.Size(1019, 598);
             this.canvas.TabIndex = 0;
             this.canvas.TabStop = false;
             this.canvas.Paint += new System.Windows.Forms.PaintEventHandler(this.canvas_Paint);
             // 
             // herniTimer
             // 
+            this.herniTimer.Interval = 1000;
             this.herniTimer.Tick += new System.EventHandler(this.herniTimer_Tick);
             // 
             // label1
@@ -92,13 +92,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1036, 676);
+            this.ClientSize = new System.Drawing.Size(1057, 693);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.lb_skore);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.canvas);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Had";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.canvas)).EndInit();
             this.ResumeLayout(false);
@@ -114,7 +114,6 @@
         private System.Windows.Forms.Label lb_skore;
         private System.Windows.Forms.Timer bonusovyTimer;
         private System.Windows.Forms.ProgressBar progressBar1;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
 

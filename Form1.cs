@@ -22,6 +22,8 @@ namespace Had
         {
             InitializeComponent();
             progressBar1.Visible = false;
+            canvas.Width = 762;
+            canvas.Height = 502;
             int x = (canvas.Width / 20) / 2;
             int y = (canvas.Height / 20) / 2;
             had = new Had(x, y, canvas.Width / 20, canvas.Height / 20);
@@ -145,5 +147,6 @@ namespace Had
                 PremistiJidlo();             
             }
         }
+
     }
 }
