@@ -51,7 +51,6 @@
             // 
             // herniTimer
             // 
-            this.herniTimer.Interval = 1000;
             this.herniTimer.Tick += new System.EventHandler(this.herniTimer_Tick);
             // 
             // label1
